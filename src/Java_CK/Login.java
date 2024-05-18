@@ -82,7 +82,7 @@ public class Login extends JFrame {
 
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/users", "root", "123456789");
+            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/user", "root", "123456789");
         } catch (ClassNotFoundException | SQLException ex) {
             ex.printStackTrace();
             JOptionPane.showMessageDialog(this, "Không thể kết nối với cơ sở dữ liệu!");
@@ -99,7 +99,7 @@ public class Login extends JFrame {
 
     private void authenticateUser(String username, String password) {
         try {
-            String query = "SELECT * FROM users.login WHERE `username`=? AND `password`=?";
+            String query = "SELECT * FROM user.login WHERE `username`=? AND `password`=?";
             PreparedStatement statement = connection.prepareStatement(query);
             statement.setString(1, username);
             statement.setString(2, encryptPassword(password));
@@ -107,6 +107,7 @@ public class Login extends JFrame {
             if (resultSet.next()) {
                 Home home = new Home();
                 home.setVisible(true);
+                this.dispose();
             } else {
                 JOptionPane.showMessageDialog(Login.this, "Sai username hoặc password");
             }
@@ -117,7 +118,7 @@ public class Login extends JFrame {
 
     private void registerUser(String username, String password) {
         try {
-            String query = "INSERT INTO users.login (`username`, `password`) VALUES (?, ?)";
+            String query = "INSERT INTO user.login (`username`, `password`) VALUES (?, ?)";
             PreparedStatement statement = connection.prepareStatement(query);
             statement.setString(1, username);
             statement.setString(2, encryptPassword(password));

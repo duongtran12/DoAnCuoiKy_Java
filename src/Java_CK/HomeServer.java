@@ -67,7 +67,7 @@ public class HomeServer extends JFrame {
         contentPane.add(panel_menu);
         panel_menu.setLayout(null);
 
-        JLabel customer = new JLabel("CUSTOMER");
+        JLabel customer = new JLabel("CUSTOMER SUPPORT");
         customer.setForeground(new Color(255, 165, 0));
         customer.setFont(new Font("Tahoma", Font.PLAIN, 20));
         customer.setHorizontalAlignment(SwingConstants.LEFT);

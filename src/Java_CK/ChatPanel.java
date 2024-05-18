@@ -36,7 +36,6 @@ public class ChatPanel extends JPanel {
 		
 		JPanel panel = new JPanel();
 		panel.setBackground(new Color(0, 153, 255));
-		panel.setBorder(new TitledBorder(null, "Message", TitledBorder.LEADING, TitledBorder.TOP, null, null));
 		add(panel, BorderLayout.SOUTH);
 		panel.setLayout(new GridLayout(0, 2, 0, 0));
 		

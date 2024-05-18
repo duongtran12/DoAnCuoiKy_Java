@@ -64,7 +64,7 @@ public class Home extends JFrame {
         contentPane.add(panel_menu);
         panel_menu.setLayout(null);
 
-        JLabel customer = new JLabel("CUSTOMER");
+        JLabel customer = new JLabel("CUSTOMER SUPPORT\r\n\r\n");
         customer.setForeground(new Color(255, 165, 0));
         customer.setFont(new Font("Tahoma", Font.PLAIN, 20));
         customer.setHorizontalAlignment(SwingConstants.LEFT);
