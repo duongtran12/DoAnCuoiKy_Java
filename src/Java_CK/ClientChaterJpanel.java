@@ -54,7 +54,7 @@ public class ClientChaterJpanel extends JPanel {
 						mngPort = 12360;
 						staffName = "you";
 						try {
-							mngSocket = new Socket("localhost", mngPort);
+							mngSocket = new Socket("172.20.10.3", mngPort);
 							if (mngSocket != null) {
 								ChatPanel p = new ChatPanel(mngSocket, staffName, "Shop");
 								add(p, BorderLayout.CENTER);

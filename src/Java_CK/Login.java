@@ -82,7 +82,7 @@ public class Login extends JFrame {
 
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/user", "root", "123456789");
+            connection = DriverManager.getConnection("jdbc:mysql://172.20.10.3:3306/user", "chau", "1234");
         } catch (ClassNotFoundException | SQLException ex) {
             ex.printStackTrace();
             JOptionPane.showMessageDialog(this, "Không thể kết nối với cơ sở dữ liệu!");
@@ -105,9 +105,10 @@ public class Login extends JFrame {
             statement.setString(2, encryptPassword(password));
             ResultSet resultSet = statement.executeQuery();
             if (resultSet.next()) {
-                Home home = new Home();
-                home.setVisible(true);
-                this.dispose();
+//                Home home = new Home();
+//                home.setVisible(true);
+//                this.dispose();
+            	System.out.println("hello");
             } else {
                 JOptionPane.showMessageDialog(Login.this, "Sai username hoặc password");
             }
